@@ -11,6 +11,8 @@ const Base = styled.div`
 `;
 
 const Container = styled.div`
+  width: 20;
+  height: 20;
   display: flex;
   flex-direction: column;
   box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
@@ -34,7 +36,7 @@ const Info = styled.div`
   flex: 1 1 0%;
 `;
 
-const Titie = styled.h4`
+const Title = styled.h4`
   margin: 0;
   padding: 0;
   font-size: 24px;
@@ -66,7 +68,7 @@ const Item: React.FC = () => {
         <Image src="https://roflzoo.com/pics/201111/cat-taking-a-nap.jpg"></Image>
       </ImageWrapper>
       <Info>
-        <Titie>cat taking a nap</Titie>
+        <Title>cat taking a nap</Title>
         <Description>zzzzzzzzzzzzzzzz</Description>
       </Info>
     </Container>
@@ -77,7 +79,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 5000);
   }, []);
 
   return (

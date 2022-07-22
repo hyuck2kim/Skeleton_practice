@@ -26,8 +26,8 @@ const pulseKeyframe = keyframes`
     }
 `;
 
-const pusleAnimation = css`
-  animation: ${pulseKeyframe} 1.5s ease-in-out infinite;
+const pulseAnimation = css`
+  animation: ${pulseKeyframe} 1.5s ease-in-out 0.5s infinite;
 `;
 
 const Base = styled.div<Props>`
@@ -35,7 +35,7 @@ const Base = styled.div<Props>`
   ${({ rounded }) => rounded && `border-radius: 8px`};
   ${({ circle }) => circle && `border-radius: 50%`};
   ${({ width, height }) => (width || height) && `display: block`};
-  ${({ animation }) => animation || pusleAnimation};
+  ${({ animation }) => animation && pulseAnimation};
   width: ${({ width, unit }) => width && unit && `${width}${unit}`};
   height: ${({ height, unit }) => height && unit && `${height}${unit}`};
 `;
@@ -52,7 +52,7 @@ const Skeleton: React.FC<Props> = ({
   count,
   unit = "px",
   animation = true,
-  color = "FF4F4F4",
+  color = "grey",
   style,
 }) => {
   const content = useMemo(
